@@ -1,0 +1,199 @@
+{
+  "mod_elements": [
+    {
+      "name": "MyTitan",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "my_titan",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/my_titan/models/item/my_titan.json",
+          "src/main/java/net/kills/mytitan/item/MyTitanItem.java"
+        ]
+      }
+    },
+    {
+      "name": "MyTitanTab",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "my_titan_tab",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "TitanTransformation",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "titan_transformation",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/network/TitanTransformationMessage.java"
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "TransformTitan",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "transform_titan",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/TransformTitanProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation"
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "IsPlayerTransformed",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "DoesPlayerOwnAttackTitan",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "DoesPlayerOwnColossalTitan",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "DoesPlayerOwnFemaleTitan",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "DoesPlayerOwnBeastTitan",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "DoesPlayerownFoundingTitan",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "DoesPlayerOwnCartTitan",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "DoesPlayerOwnJawTitan",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "DoesPlayerOwnArmoredTitan",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "SelectedTitan",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    }
+  ],
+  "sound_elements": [
+    {
+      "name": "titanstransform",
+      "files": [
+        "titan_transformation_lightning_sound_effects_-_attack_on_titan_1",
+        "titan_transformation_lightning_sound_effects_-_attack_on_titan_1"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "titanelectricity",
+      "files": [
+        "electricity_sound_effect_xd_thx_for_1m_views"
+      ],
+      "category": "player",
+      "subtitle": ""
+    }
+  ],
+  "tag_elements": {},
+  "language_map": {
+    "en_us": {
+      "subtitles.titanelectricity": "",
+      "key.my_titan.titan_transformation": "Transform",
+      "item.my_titan.my_titan": "My Titan",
+      "subtitles.titanstransform": "",
+      "key.categories.titan": "My Titan",
+      "item_group.my_titan.my_titan_tab": "My Titan"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "Player Animations",
+        "children": []
+      },
+      {
+        "name": "Creative Tab",
+        "children": []
+      },
+      {
+        "name": "Keybinds",
+        "children": []
+      },
+      {
+        "name": "Procedures",
+        "children": [
+          {
+            "name": "Transformation",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "my_titan",
+    "modName": "My Titan",
+    "version": "1.0.0",
+    "author": "ARCADIA, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Not specified",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [
+      "curios_api",
+      "geckolib",
+      "playeranimator",
+      "jei"
+    ],
+    "currentGenerator": "neoforge-1.20.4",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "net.kills.mytitan"
+  },
+  "mcreatorVersion": 202400118518
+}
