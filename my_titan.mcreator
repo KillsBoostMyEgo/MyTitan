@@ -119,15 +119,15 @@
       "path": "~/Keybinds"
     },
     {
-      "name": "StupAnimations",
+      "name": "SetupAnimations",
       "type": "procedure",
       "sortid": 8,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "stup_animations",
+      "registry_name": "setup_animations",
       "metadata": {
         "files": [
-          "src/main/java/net/kills/mytitan/procedures/StupAnimationsProcedure.java"
+          "src/main/java/net/kills/mytitan/procedures/SetupAnimationsProcedure.java"
         ],
         "dependencies": []
       },

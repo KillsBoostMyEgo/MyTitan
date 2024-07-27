@@ -23,38 +23,36 @@ public class TransformTitanProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity instanceof Player _player && !_player.level().isClientSide())
-			_player.displayClientMessage(Component.literal("Called"), false);
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() instanceof SwordItem
 				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() instanceof AxeItem) {
 			if (entity instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal("Called Sword"), false);
+				_player.displayClientMessage(Component.literal("Called Sword"), true);
 			if (world.isClientSide()) {
 				if (entity instanceof AbstractClientPlayer player) {
 					var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("my_titan", "player_animation"));
-					if (animation != null && !animation.isActive()) {
+					if (animation != null) {
 						animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("my_titan", "cutting"))));
 					}
 				}
 			}
 			if (!world.isClientSide()) {
 				if (entity instanceof Player)
-					PacketDistributor.ALL.noArg().send(new StupAnimationsProcedure.MyTitanModAnimationMessage(Component.literal("cutting"), entity.getId(), false));
+					PacketDistributor.ALL.noArg().send(new SetupAnimationsProcedure.MyTitanModAnimationMessage(Component.literal("cutting"), entity.getId(), true));
 			}
 		} else {
 			if (entity instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal("Called Empty"), false);
+				_player.displayClientMessage(Component.literal("Called Empty"), true);
 			if (world.isClientSide()) {
 				if (entity instanceof AbstractClientPlayer player) {
 					var animation = (ModifierLayer<IAnimation>) PlayerAnimationAccess.getPlayerAssociatedData(player).get(new ResourceLocation("my_titan", "player_animation"));
-					if (animation != null && !animation.isActive()) {
+					if (animation != null) {
 						animation.setAnimation(new KeyframeAnimationPlayer(PlayerAnimationRegistry.getAnimation(new ResourceLocation("my_titan", "biting"))));
 					}
 				}
 			}
 			if (!world.isClientSide()) {
 				if (entity instanceof Player)
-					PacketDistributor.ALL.noArg().send(new StupAnimationsProcedure.MyTitanModAnimationMessage(Component.literal("biting"), entity.getId(), false));
+					PacketDistributor.ALL.noArg().send(new SetupAnimationsProcedure.MyTitanModAnimationMessage(Component.literal("biting"), entity.getId(), true));
 			}
 		}
 	}

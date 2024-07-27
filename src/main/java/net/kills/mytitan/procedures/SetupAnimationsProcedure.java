@@ -30,10 +30,10 @@ import dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer;
 import dev.kosmx.playerAnim.api.layered.IAnimation;
 
 @Mod.EventBusSubscriber(modid = "my_titan", bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-public class StupAnimationsProcedure {
+public class SetupAnimationsProcedure {
 	@SubscribeEvent
 	public static void onClientSetup(FMLClientSetupEvent event) {
-		PlayerAnimationFactory.ANIMATION_DATA_FACTORY.registerFactory(new ResourceLocation("my_titan", "player_animation"), 1000, StupAnimationsProcedure::registerPlayerAnimations);
+		PlayerAnimationFactory.ANIMATION_DATA_FACTORY.registerFactory(new ResourceLocation("my_titan", "player_animation"), 1000, SetupAnimationsProcedure::registerPlayerAnimations);
 	}
 
 	private static IAnimation registerPlayerAnimations(AbstractClientPlayer player) {
@@ -43,7 +43,7 @@ public class StupAnimationsProcedure {
 	@Mod.EventBusSubscriber(modid = "my_titan", bus = Mod.EventBusSubscriber.Bus.MOD)
 	public static record MyTitanModAnimationMessage(Component animation, int target, boolean override) implements CustomPacketPayload {
 
-		public static final ResourceLocation ID = new ResourceLocation(MyTitanMod.MODID, "stup_animations");
+		public static final ResourceLocation ID = new ResourceLocation(MyTitanMod.MODID, "setup_animations");
 		public MyTitanModAnimationMessage(FriendlyByteBuf buffer) {
 			this(buffer.readComponent(), buffer.readInt(), buffer.readBoolean());
 		}
