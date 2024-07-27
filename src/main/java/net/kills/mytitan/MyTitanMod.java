@@ -19,6 +19,7 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.network.FriendlyByteBuf;
 
 import net.kills.mytitan.network.MyTitanModVariables;
+import net.kills.mytitan.init.MyTitanModTabs;
 import net.kills.mytitan.init.MyTitanModSounds;
 import net.kills.mytitan.init.MyTitanModItems;
 
@@ -43,6 +44,7 @@ public class MyTitanMod {
 
 		MyTitanModItems.register(modEventBus);
 
+		MyTitanModTabs.REGISTRY.register(modEventBus);
 		MyTitanModVariables.ATTACHMENT_TYPES.register(modEventBus);
 
 		// Start of user code block mod init

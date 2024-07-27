@@ -3,6 +3,7 @@
     {
       "name": "MyTitan",
       "type": "item",
+      "sortid": 2,
       "compiles": true,
       "locked_code": false,
       "registry_name": "my_titan",
@@ -16,6 +17,7 @@
     {
       "name": "MyTitanTab",
       "type": "tab",
+      "sortid": 1,
       "compiles": true,
       "locked_code": false,
       "registry_name": "my_titan_tab",
@@ -26,6 +28,7 @@
     {
       "name": "TitanTransformation",
       "type": "keybind",
+      "sortid": 3,
       "compiles": true,
       "locked_code": false,
       "registry_name": "titan_transformation",
@@ -39,6 +42,7 @@
     {
       "name": "TransformTitan",
       "type": "procedure",
+      "sortid": 4,
       "compiles": true,
       "locked_code": false,
       "registry_name": "transform_titan",
@@ -54,6 +58,61 @@
         ]
       },
       "path": "~/Procedures/Transformation"
+    },
+    {
+      "name": "ODMGear",
+      "type": "animatedarmor",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "odm_gear",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/client/renderer/ODMGearArmorRenderer.java",
+          "src/main/java/net/kills/mytitan/item/model/ODMGearModel.java",
+          "src/main/resources/assets/my_titan/models/item/odm_gear_leggings.json",
+          "src/main/java/net/kills/mytitan/item/ODMGearItem.java"
+        ]
+      },
+      "path": "~/Creative Tab"
+    },
+    {
+      "name": "ODMGearMovement",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "odm_gear_movement",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/ODMGearMovementProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "UseODMGear",
+      "type": "keybind",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "use_odm_gear",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/network/UseODMGearMessage.java"
+        ]
+      },
+      "path": "~/Keybinds"
     }
   ],
   "variable_elements": [
@@ -141,9 +200,14 @@
   "language_map": {
     "en_us": {
       "subtitles.titanelectricity": "",
+      "item.my_titan.odm_gear_boots": "ODM Gear Boots",
       "key.my_titan.titan_transformation": "Transform",
+      "item.my_titan.odm_gear_helmet": "ODM Gear Helmet",
       "item.my_titan.my_titan": "My Titan",
+      "item.my_titan.odm_gear_chestplate": "ODM Gear Chestplate",
       "subtitles.titanstransform": "",
+      "item.my_titan.odm_gear_leggings": "ODM Gear",
+      "key.my_titan.use_odm_gear": "Use ODM Gear",
       "key.categories.titan": "My Titan",
       "item_group.my_titan.my_titan_tab": "My Titan"
     }

@@ -1,8 +1,13 @@
 {
   "subtitles.titanelectricity": "",
+  "item.my_titan.odm_gear_boots": "ODM Gear Boots",
   "key.my_titan.titan_transformation": "Transform",
+  "item.my_titan.odm_gear_helmet": "ODM Gear Helmet",
   "item.my_titan.my_titan": "My Titan",
+  "item.my_titan.odm_gear_chestplate": "ODM Gear Chestplate",
   "subtitles.titanstransform": "",
+  "item.my_titan.odm_gear_leggings": "ODM Gear",
+  "key.my_titan.use_odm_gear": "Use ODM Gear",
   "key.categories.titan": "My Titan",
   "item_group.my_titan.my_titan_tab": "My Titan"
 }

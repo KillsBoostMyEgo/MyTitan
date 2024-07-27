@@ -16,6 +16,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.KeyMapping;
 
+import net.kills.mytitan.network.UseODMGearMessage;
 import net.kills.mytitan.network.TitanTransformationMessage;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
@@ -33,10 +34,24 @@ public class MyTitanModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	public static final KeyMapping USE_ODM_GEAR = new KeyMapping("key.my_titan.use_odm_gear", GLFW.GLFW_KEY_R, "key.categories.misc") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				PacketDistributor.SERVER.noArg().send(new UseODMGearMessage(0, 0));
+				UseODMGearMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+			}
+			isDownOld = isDown;
+		}
+	};
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
 		event.register(TITAN_TRANSFORMATION);
+		event.register(USE_ODM_GEAR);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})
@@ -45,6 +60,7 @@ public class MyTitanModKeyMappings {
 		public static void onClientTick(TickEvent.ClientTickEvent event) {
 			if (Minecraft.getInstance().screen == null) {
 				TITAN_TRANSFORMATION.consumeClick();
+				USE_ODM_GEAR.consumeClick();
 			}
 		}
 	}
