@@ -57,7 +57,7 @@ public record TitanTransformationMessage(int type, int pressedms) implements Cus
 			return;
 		if (type == 0) {
 
-			TransformTitanProcedure.execute(entity);
+			TransformTitanProcedure.execute(world, entity);
 		}
 	}
 

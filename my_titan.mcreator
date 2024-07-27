@@ -54,6 +54,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -113,6 +117,21 @@
         ]
       },
       "path": "~/Keybinds"
+    },
+    {
+      "name": "StupAnimations",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stup_animations",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/StupAnimationsProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Player Animations"
     }
   ],
   "variable_elements": [
