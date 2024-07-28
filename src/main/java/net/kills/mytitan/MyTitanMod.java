@@ -21,6 +21,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.kills.mytitan.network.MyTitanModVariables;
 import net.kills.mytitan.init.MyTitanModTabs;
 import net.kills.mytitan.init.MyTitanModSounds;
+import net.kills.mytitan.init.MyTitanModParticleTypes;
 import net.kills.mytitan.init.MyTitanModItems;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -46,6 +47,8 @@ public class MyTitanMod {
 
 		MyTitanModTabs.REGISTRY.register(modEventBus);
 		MyTitanModVariables.ATTACHMENT_TYPES.register(modEventBus);
+
+		MyTitanModParticleTypes.REGISTRY.register(modEventBus);
 
 		// Start of user code block mod init
 		// End of user code block mod init

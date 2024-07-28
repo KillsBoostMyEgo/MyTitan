@@ -15,6 +15,6 @@ import net.kills.mytitan.MyTitanMod;
 
 public class MyTitanModSounds {
 	public static final DeferredRegister<SoundEvent> REGISTRY = DeferredRegister.create(Registries.SOUND_EVENT, MyTitanMod.MODID);
-	public static final DeferredHolder<SoundEvent, SoundEvent> TITANSTRANSFORM = REGISTRY.register("titanstransform", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("my_titan", "titanstransform")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> TITANELECTRICITY = REGISTRY.register("titanelectricity", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("my_titan", "titanelectricity")));
+	public static final DeferredHolder<SoundEvent, SoundEvent> TITANTRANSFORM = REGISTRY.register("titantransform", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("my_titan", "titantransform")));
 }

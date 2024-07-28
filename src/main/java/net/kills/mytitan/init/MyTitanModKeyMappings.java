@@ -30,6 +30,11 @@ public class MyTitanModKeyMappings {
 			if (isDownOld != isDown && isDown) {
 				PacketDistributor.SERVER.noArg().send(new TitanTransformationMessage(0, 0));
 				TitanTransformationMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+				TITAN_TRANSFORMATION_LASTPRESS = System.currentTimeMillis();
+			} else if (isDownOld != isDown && !isDown) {
+				int dt = (int) (System.currentTimeMillis() - TITAN_TRANSFORMATION_LASTPRESS);
+				PacketDistributor.SERVER.noArg().send(new TitanTransformationMessage(1, dt));
+				TitanTransformationMessage.pressAction(Minecraft.getInstance().player, 1, dt);
 			}
 			isDownOld = isDown;
 		}
@@ -47,6 +52,7 @@ public class MyTitanModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	private static long TITAN_TRANSFORMATION_LASTPRESS = 0;
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {

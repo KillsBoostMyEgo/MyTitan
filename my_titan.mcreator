@@ -56,6 +56,18 @@
             "type": "entity"
           },
           {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -132,6 +144,108 @@
         "dependencies": []
       },
       "path": "~/Player Animations"
+    },
+    {
+      "name": "Blood",
+      "type": "particle",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blood",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/my_titan/particles/blood.json",
+          "src/main/java/net/kills/mytitan/client/particle/BloodParticle.java"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "TitanTransformationComplete",
+      "type": "procedure",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "titan_transformation_complete",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/TitanTransformationCompleteProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "Electricity",
+      "type": "particle",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "electricity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/client/particle/ElectricityParticle.java",
+          "src/main/resources/assets/my_titan/particles/electricity.json"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "TitanTransformParticlesSoun",
+      "type": "procedure",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "titan_transform_particles_soun",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/TitanTransformParticlesSounProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation"
     }
   ],
   "variable_elements": [
@@ -198,18 +312,17 @@
   ],
   "sound_elements": [
     {
-      "name": "titanstransform",
+      "name": "titanelectricity",
       "files": [
-        "titan_transformation_lightning_sound_effects_-_attack_on_titan_1",
-        "titan_transformation_lightning_sound_effects_-_attack_on_titan_1"
+        "electricity_sound_effect_xd_thx_for_1m_views"
       ],
       "category": "player",
       "subtitle": ""
     },
     {
-      "name": "titanelectricity",
+      "name": "titantransform",
       "files": [
-        "electricity_sound_effect_xd_thx_for_1m_views"
+        "titan_transformation_lightning_sound_effects_-_attack_on_titan_1"
       ],
       "category": "player",
       "subtitle": ""
@@ -218,17 +331,18 @@
   "tag_elements": {},
   "language_map": {
     "en_us": {
-      "subtitles.titanelectricity": "",
-      "item.my_titan.odm_gear_boots": "ODM Gear Boots",
-      "key.my_titan.titan_transformation": "Transform",
       "item.my_titan.odm_gear_helmet": "ODM Gear Helmet",
       "item.my_titan.my_titan": "My Titan",
       "item.my_titan.odm_gear_chestplate": "ODM Gear Chestplate",
       "subtitles.titanstransform": "",
       "item.my_titan.odm_gear_leggings": "ODM Gear",
+      "item_group.my_titan.my_titan_tab": "My Titan",
+      "subtitles.titanelectricity": "",
+      "item.my_titan.odm_gear_boots": "ODM Gear Boots",
+      "key.my_titan.titan_transformation": "Transform",
       "key.my_titan.use_odm_gear": "Use ODM Gear",
       "key.categories.titan": "My Titan",
-      "item_group.my_titan.my_titan_tab": "My Titan"
+      "subtitles.titantransform": ""
     }
   },
   "foldersRoot": {
@@ -254,6 +368,14 @@
             "children": []
           }
         ]
+      },
+      {
+        "name": "Particles",
+        "children": []
+      },
+      {
+        "name": "Biomes",
+        "children": []
       }
     ]
   },
