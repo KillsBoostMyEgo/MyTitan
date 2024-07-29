@@ -1,0 +1,15 @@
+{
+  "_fv": 60,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "A",
+    "keyBindingName": "Navigate Left ODM Gear",
+    "keyBindingCategoryKey": "movement",
+    "onKeyPressed": {
+      "name": "ODMMoveLeftEnable"
+    },
+    "onKeyReleased": {
+      "name": "ODMMoveDisable"
+    }
+  }
+}

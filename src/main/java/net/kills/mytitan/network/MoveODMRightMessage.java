@@ -14,15 +14,15 @@ import net.minecraft.network.protocol.PacketFlow;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 
-import net.kills.mytitan.procedures.ODMEnableProcedure;
-import net.kills.mytitan.procedures.ODMDisableProcedure;
+import net.kills.mytitan.procedures.ODMMoveRightEnableProcedure;
+import net.kills.mytitan.procedures.ODMMoveDisableProcedure;
 import net.kills.mytitan.MyTitanMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public record UseODMGearMessage(int type, int pressedms) implements CustomPacketPayload {
-	public static final ResourceLocation ID = new ResourceLocation(MyTitanMod.MODID, "key_use_odm_gear");
+public record MoveODMRightMessage(int type, int pressedms) implements CustomPacketPayload {
+	public static final ResourceLocation ID = new ResourceLocation(MyTitanMod.MODID, "key_move_odm_right");
 
-	public UseODMGearMessage(FriendlyByteBuf buffer) {
+	public MoveODMRightMessage(FriendlyByteBuf buffer) {
 		this(buffer.readInt(), buffer.readInt());
 	}
 
@@ -37,7 +37,7 @@ public record UseODMGearMessage(int type, int pressedms) implements CustomPacket
 		return ID;
 	}
 
-	public static void handleData(final UseODMGearMessage message, final PlayPayloadContext context) {
+	public static void handleData(final MoveODMRightMessage message, final PlayPayloadContext context) {
 		if (context.flow() == PacketFlow.SERVERBOUND) {
 			context.workHandler().submitAsync(() -> {
 				pressAction(context.player().get(), message.type, message.pressedms);
@@ -58,16 +58,16 @@ public record UseODMGearMessage(int type, int pressedms) implements CustomPacket
 			return;
 		if (type == 0) {
 
-			ODMEnableProcedure.execute(entity);
+			ODMMoveRightEnableProcedure.execute(entity);
 		}
 		if (type == 1) {
 
-			ODMDisableProcedure.execute(entity);
+			ODMMoveDisableProcedure.execute(entity);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		MyTitanMod.addNetworkMessage(UseODMGearMessage.ID, UseODMGearMessage::new, UseODMGearMessage::handleData);
+		MyTitanMod.addNetworkMessage(MoveODMRightMessage.ID, MoveODMRightMessage::new, MoveODMRightMessage::handleData);
 	}
 }

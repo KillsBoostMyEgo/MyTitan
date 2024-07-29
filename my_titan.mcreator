@@ -81,30 +81,6 @@
       "path": "~/Creative Tab"
     },
     {
-      "name": "ODMGearMovement",
-      "type": "procedure",
-      "sortid": 6,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "odm_gear_movement",
-      "metadata": {
-        "files": [
-          "src/main/java/net/kills/mytitan/procedures/ODMGearMovementProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Procedures"
-    },
-    {
       "name": "UseODMGear",
       "type": "keybind",
       "sortid": 7,
@@ -132,6 +108,158 @@
         "dependencies": []
       },
       "path": "~/Player Animations"
+    },
+    {
+      "name": "ODMEnable",
+      "type": "procedure",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "odm_enable",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/ODMEnableProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/ODM Gear Movement"
+    },
+    {
+      "name": "ODMDisable",
+      "type": "procedure",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "odm_disable",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/ODMDisableProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/ODM Gear Movement"
+    },
+    {
+      "name": "ODMLogic",
+      "type": "procedure",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "odm_logic",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/ODMLogicProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/ODM Gear Movement"
+    },
+    {
+      "name": "ODMMoveLeftEnable",
+      "type": "procedure",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "odm_move_left_enable",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/ODMMoveLeftEnableProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/ODM Gear Movement"
+    },
+    {
+      "name": "ODMMoveRightEnable",
+      "type": "procedure",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "odm_move_right_enable",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/ODMMoveRightEnableProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/ODM Gear Movement"
+    },
+    {
+      "name": "MoveODMLeft",
+      "type": "keybind",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "move_odm_left",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/network/MoveODMLeftMessage.java"
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "MoveODMRight",
+      "type": "keybind",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "move_odm_right",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/network/MoveODMRightMessage.java"
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "ODMMoveDisable",
+      "type": "procedure",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "odm_move_disable",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/ODMMoveDisableProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/ODM Gear Movement"
     }
   ],
   "variable_elements": [
@@ -194,6 +322,36 @@
       "type": "number",
       "scope": "player_lifetime",
       "value": "0"
+    },
+    {
+      "name": "ODMEnabled",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "ODMSelectedX",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "ODMSelectedY",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "ODMSelectedZ",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "ODMDirection",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
     }
   ],
   "sound_elements": [
@@ -218,17 +376,19 @@
   "tag_elements": {},
   "language_map": {
     "en_us": {
-      "subtitles.titanelectricity": "",
-      "item.my_titan.odm_gear_boots": "ODM Gear Boots",
-      "key.my_titan.titan_transformation": "Transform",
+      "key.my_titan.move_odm_left": "Navigate Left ODM Gear",
       "item.my_titan.odm_gear_helmet": "ODM Gear Helmet",
       "item.my_titan.my_titan": "My Titan",
       "item.my_titan.odm_gear_chestplate": "ODM Gear Chestplate",
       "subtitles.titanstransform": "",
       "item.my_titan.odm_gear_leggings": "ODM Gear",
+      "item_group.my_titan.my_titan_tab": "My Titan",
+      "subtitles.titanelectricity": "",
+      "item.my_titan.odm_gear_boots": "ODM Gear Boots",
+      "key.my_titan.titan_transformation": "Transform",
       "key.my_titan.use_odm_gear": "Use ODM Gear",
-      "key.categories.titan": "My Titan",
-      "item_group.my_titan.my_titan_tab": "My Titan"
+      "key.my_titan.move_odm_right": "Navigate Left ODM Gear",
+      "key.categories.titan": "My Titan"
     }
   },
   "foldersRoot": {
@@ -251,6 +411,10 @@
         "children": [
           {
             "name": "Transformation",
+            "children": []
+          },
+          {
+            "name": "ODM Gear Movement",
             "children": []
           }
         ]

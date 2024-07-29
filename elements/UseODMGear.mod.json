@@ -6,7 +6,10 @@
     "keyBindingName": "Use ODM Gear",
     "keyBindingCategoryKey": "misc",
     "onKeyPressed": {
-      "name": "ODMGearMovement"
+      "name": "ODMEnable"
+    },
+    "onKeyReleased": {
+      "name": "ODMDisable"
     }
   }
 }
