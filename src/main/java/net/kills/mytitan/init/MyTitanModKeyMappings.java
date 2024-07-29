@@ -18,6 +18,7 @@ import net.minecraft.client.KeyMapping;
 
 import net.kills.mytitan.network.UseODMGearMessage;
 import net.kills.mytitan.network.TitanTransformationMessage;
+import net.kills.mytitan.network.SelectionMenuOpenMessage;
 import net.kills.mytitan.network.MoveODMRightMessage;
 import net.kills.mytitan.network.MoveODMLeftMessage;
 
@@ -41,7 +42,7 @@ public class MyTitanModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
-	public static final KeyMapping USE_ODM_GEAR = new KeyMapping("key.my_titan.use_odm_gear", GLFW.GLFW_KEY_R, "key.categories.misc") {
+	public static final KeyMapping USE_ODM_GEAR = new KeyMapping("key.my_titan.use_odm_gear", GLFW.GLFW_KEY_R, "key.categories.titan") {
 		private boolean isDownOld = false;
 
 		@Override
@@ -59,7 +60,7 @@ public class MyTitanModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
-	public static final KeyMapping MOVE_ODM_LEFT = new KeyMapping("key.my_titan.move_odm_left", GLFW.GLFW_KEY_A, "key.categories.movement") {
+	public static final KeyMapping MOVE_ODM_LEFT = new KeyMapping("key.my_titan.move_odm_left", GLFW.GLFW_KEY_A, "key.categories.titan") {
 		private boolean isDownOld = false;
 
 		@Override
@@ -77,7 +78,7 @@ public class MyTitanModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
-	public static final KeyMapping MOVE_ODM_RIGHT = new KeyMapping("key.my_titan.move_odm_right", GLFW.GLFW_KEY_D, "key.categories.movement") {
+	public static final KeyMapping MOVE_ODM_RIGHT = new KeyMapping("key.my_titan.move_odm_right", GLFW.GLFW_KEY_D, "key.categories.titan") {
 		private boolean isDownOld = false;
 
 		@Override
@@ -95,6 +96,19 @@ public class MyTitanModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	public static final KeyMapping SELECTION_MENU_OPEN = new KeyMapping("key.my_titan.selection_menu_open", GLFW.GLFW_KEY_Z, "key.categories.titan") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				PacketDistributor.SERVER.noArg().send(new SelectionMenuOpenMessage(0, 0));
+				SelectionMenuOpenMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+			}
+			isDownOld = isDown;
+		}
+	};
 	private static long TITAN_TRANSFORMATION_LASTPRESS = 0;
 	private static long USE_ODM_GEAR_LASTPRESS = 0;
 	private static long MOVE_ODM_LEFT_LASTPRESS = 0;
@@ -106,6 +120,7 @@ public class MyTitanModKeyMappings {
 		event.register(USE_ODM_GEAR);
 		event.register(MOVE_ODM_LEFT);
 		event.register(MOVE_ODM_RIGHT);
+		event.register(SELECTION_MENU_OPEN);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})
@@ -117,6 +132,7 @@ public class MyTitanModKeyMappings {
 				USE_ODM_GEAR.consumeClick();
 				MOVE_ODM_LEFT.consumeClick();
 				MOVE_ODM_RIGHT.consumeClick();
+				SELECTION_MENU_OPEN.consumeClick();
 			}
 		}
 	}

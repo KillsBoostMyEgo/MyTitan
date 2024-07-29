@@ -56,6 +56,18 @@
             "type": "entity"
           },
           {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -74,8 +86,8 @@
         "files": [
           "src/main/java/net/kills/mytitan/client/renderer/ODMGearArmorRenderer.java",
           "src/main/java/net/kills/mytitan/item/model/ODMGearModel.java",
-          "src/main/resources/assets/my_titan/models/item/odm_gear_leggings.json",
-          "src/main/java/net/kills/mytitan/item/ODMGearItem.java"
+          "src/main/java/net/kills/mytitan/item/ODMGearItem.java",
+          "src/main/resources/assets/my_titan/models/item/odm_gear_leggings.json"
         ]
       },
       "path": "~/Creative Tab"
@@ -120,7 +132,12 @@
         "files": [
           "src/main/java/net/kills/mytitan/procedures/ODMEnableProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Procedures/ODM Gear Movement"
     },
@@ -163,7 +180,12 @@
         "files": [
           "src/main/java/net/kills/mytitan/procedures/ODMMoveDisableProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Procedures/ODM Gear Movement"
     },
@@ -178,7 +200,12 @@
         "files": [
           "src/main/java/net/kills/mytitan/procedures/ODMDisableProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Procedures/ODM Gear Movement"
     },
@@ -217,7 +244,12 @@
         "files": [
           "src/main/java/net/kills/mytitan/procedures/ODMMoveLeftEnableProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Procedures/ODM Gear Movement"
     },
@@ -232,7 +264,12 @@
         "files": [
           "src/main/java/net/kills/mytitan/procedures/ODMMoveRightEnableProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Procedures/ODM Gear Movement"
     },
@@ -245,8 +282,8 @@
       "registry_name": "electricity",
       "metadata": {
         "files": [
-          "src/main/resources/assets/my_titan/particles/electricity.json",
-          "src/main/java/net/kills/mytitan/client/particle/ElectricityParticle.java"
+          "src/main/java/net/kills/mytitan/client/particle/ElectricityParticle.java",
+          "src/main/resources/assets/my_titan/particles/electricity.json"
         ]
       },
       "path": "~/Particles"
@@ -332,11 +369,908 @@
       "registry_name": "blood",
       "metadata": {
         "files": [
-          "src/main/java/net/kills/mytitan/client/particle/BloodParticle.java",
-          "src/main/resources/assets/my_titan/particles/blood.json"
+          "src/main/resources/assets/my_titan/particles/blood.json",
+          "src/main/java/net/kills/mytitan/client/particle/BloodParticle.java"
         ]
       },
       "path": "~/Particles"
+    },
+    {
+      "name": "ODM",
+      "type": "animatedarmor",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "odm",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/item/model/ODMModel.java",
+          "src/main/java/net/kills/mytitan/client/renderer/ODMArmorRenderer.java",
+          "src/main/resources/assets/my_titan/models/item/odm_leggings.json",
+          "src/main/java/net/kills/mytitan/item/ODMItem.java"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "SelectedAttackTitan",
+      "type": "procedure",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "selected_attack_titan",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/SelectedAttackTitanProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation/Titan Selection Variables"
+    },
+    {
+      "name": "TitanSelection",
+      "type": "gui",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "titan_selection",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/client/gui/TitanSelectionScreen.java",
+          "src/main/java/net/kills/mytitan/network/TitanSelectionButtonMessage.java",
+          "src/main/java/net/kills/mytitan/world/inventory/TitanSelectionMenu.java"
+        ]
+      },
+      "path": "~/GUIs"
+    },
+    {
+      "name": "SelectedColossalTitan",
+      "type": "procedure",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "selected_colossal_titan",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/SelectedColossalTitanProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation/Titan Selection Variables"
+    },
+    {
+      "name": "SelectedFemaleTitan",
+      "type": "procedure",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "selected_female_titan",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/SelectedFemaleTitanProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation/Titan Selection Variables"
+    },
+    {
+      "name": "SelectedBeastTitan",
+      "type": "procedure",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "selected_beast_titan",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/SelectedBeastTitanProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation/Titan Selection Variables"
+    },
+    {
+      "name": "SelectedFoundingTitan",
+      "type": "procedure",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "selected_founding_titan",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/SelectedFoundingTitanProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation/Titan Selection Variables"
+    },
+    {
+      "name": "SelectedCartTitan",
+      "type": "procedure",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "selected_cart_titan",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/SelectedCartTitanProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation/Titan Selection Variables"
+    },
+    {
+      "name": "SelectedJawTitan",
+      "type": "procedure",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "selected_jaw_titan",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/SelectedJawTitanProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation/Titan Selection Variables"
+    },
+    {
+      "name": "SelectedArmoredTitan",
+      "type": "procedure",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "selected_armored_titan",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/SelectedArmoredTitanProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation/Titan Selection Variables"
+    },
+    {
+      "name": "SelectedWarhammerTitan",
+      "type": "procedure",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "selected_warhammer_titan",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/SelectedWarhammerTitanProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation/Titan Selection Variables"
+    },
+    {
+      "name": "UsedAttackTitanSyringe",
+      "type": "procedure",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "used_attack_titan_syringe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/UsedAttackTitanSyringeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation/Syringes"
+    },
+    {
+      "name": "UsedColossalTitanSyringe",
+      "type": "procedure",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "used_colossal_titan_syringe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/UsedColossalTitanSyringeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation/Syringes"
+    },
+    {
+      "name": "UsedFemaleTitanSyringe",
+      "type": "procedure",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "used_female_titan_syringe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/UsedFemaleTitanSyringeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation/Syringes"
+    },
+    {
+      "name": "UsedBeastTitanSyringe",
+      "type": "procedure",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "used_beast_titan_syringe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/UsedBeastTitanSyringeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation/Syringes"
+    },
+    {
+      "name": "UsedFoundingTitanSyringe",
+      "type": "procedure",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "used_founding_titan_syringe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/UsedFoundingTitanSyringeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation/Syringes"
+    },
+    {
+      "name": "UsedCartTitanSyringe",
+      "type": "procedure",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "used_cart_titan_syringe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/UsedCartTitanSyringeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation/Syringes"
+    },
+    {
+      "name": "UsedJawTitanSyringe",
+      "type": "procedure",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "used_jaw_titan_syringe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/UsedJawTitanSyringeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation/Syringes"
+    },
+    {
+      "name": "UsedArmoredTitanSyringe",
+      "type": "procedure",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "used_armored_titan_syringe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/UsedArmoredTitanSyringeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation/Syringes"
+    },
+    {
+      "name": "UsedWarHammerTitanSyringe",
+      "type": "procedure",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "used_war_hammer_titan_syringe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/UsedWarHammerTitanSyringeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation/Syringes"
+    },
+    {
+      "name": "EmptySyringe",
+      "type": "item",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "empty_syringe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/item/EmptySyringeItem.java",
+          "src/main/resources/assets/my_titan/models/item/empty_syringe.json"
+        ]
+      },
+      "path": "~/Items/Syringes"
+    },
+    {
+      "name": "AttackTitanSyringe",
+      "type": "item",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "attack_titan_syringe",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/my_titan/models/item/attack_titan_syringe.json",
+          "src/main/java/net/kills/mytitan/item/AttackTitanSyringeItem.java"
+        ]
+      },
+      "path": "~/Items/Syringes"
+    },
+    {
+      "name": "FemaleTitanSyringe",
+      "type": "item",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "female_titan_syringe",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/my_titan/models/item/female_titan_syringe.json",
+          "src/main/java/net/kills/mytitan/item/FemaleTitanSyringeItem.java"
+        ]
+      },
+      "path": "~/Items/Syringes"
+    },
+    {
+      "name": "ColossalTitanSyringe",
+      "type": "item",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "colossal_titan_syringe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/item/ColossalTitanSyringeItem.java",
+          "src/main/resources/assets/my_titan/models/item/colossal_titan_syringe.json"
+        ]
+      },
+      "path": "~/Items/Syringes"
+    },
+    {
+      "name": "ArmoredTitanSyringe",
+      "type": "item",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "armored_titan_syringe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/item/ArmoredTitanSyringeItem.java",
+          "src/main/resources/assets/my_titan/models/item/armored_titan_syringe.json"
+        ]
+      },
+      "path": "~/Items/Syringes"
+    },
+    {
+      "name": "JawTitanSyringe",
+      "type": "item",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jaw_titan_syringe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/item/JawTitanSyringeItem.java",
+          "src/main/resources/assets/my_titan/models/item/jaw_titan_syringe.json"
+        ]
+      },
+      "path": "~/Items/Syringes"
+    },
+    {
+      "name": "CartTitanSyringe",
+      "type": "item",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cart_titan_syringe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/item/CartTitanSyringeItem.java",
+          "src/main/resources/assets/my_titan/models/item/cart_titan_syringe.json"
+        ]
+      },
+      "path": "~/Items/Syringes"
+    },
+    {
+      "name": "BeastTitanSyringe",
+      "type": "item",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "beast_titan_syringe",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/my_titan/models/item/beast_titan_syringe.json",
+          "src/main/java/net/kills/mytitan/item/BeastTitanSyringeItem.java"
+        ]
+      },
+      "path": "~/Items/Syringes"
+    },
+    {
+      "name": "WarHammerTitanSyringe",
+      "type": "item",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "war_hammer_titan_syringe",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/my_titan/models/item/war_hammer_titan_syringe.json",
+          "src/main/java/net/kills/mytitan/item/WarHammerTitanSyringeItem.java"
+        ]
+      },
+      "path": "~/Items/Syringes"
+    },
+    {
+      "name": "FoundingTitanSyringe",
+      "type": "item",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "founding_titan_syringe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/item/FoundingTitanSyringeItem.java",
+          "src/main/resources/assets/my_titan/models/item/founding_titan_syringe.json"
+        ]
+      },
+      "path": "~/Items/Syringes"
+    },
+    {
+      "name": "ColossalTitanUnlock",
+      "type": "achievement",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "colossal_titan_unlock",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/my_titan/advancements/colossal_titan_unlock.json"
+        ]
+      },
+      "path": "~/Advancements "
+    },
+    {
+      "name": "AttackTitanUnlock",
+      "type": "achievement",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "attack_titan_unlock",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/my_titan/advancements/attack_titan_unlock.json"
+        ]
+      },
+      "path": "~/Advancements "
+    },
+    {
+      "name": "FemaleTitanUnlock",
+      "type": "achievement",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "female_titan_unlock",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/my_titan/advancements/female_titan_unlock.json"
+        ]
+      },
+      "path": "~/Advancements "
+    },
+    {
+      "name": "BeastTitanUnlock",
+      "type": "achievement",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "beast_titan_unlock",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/my_titan/advancements/beast_titan_unlock.json"
+        ]
+      },
+      "path": "~/Advancements "
+    },
+    {
+      "name": "ArmoredTitanUnlock",
+      "type": "achievement",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "armored_titan_unlock",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/my_titan/advancements/armored_titan_unlock.json"
+        ]
+      },
+      "path": "~/Advancements "
+    },
+    {
+      "name": "WarHammerTitan",
+      "type": "achievement",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "war_hammer_titan",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/my_titan/advancements/war_hammer_titan.json"
+        ]
+      },
+      "path": "~/Advancements "
+    },
+    {
+      "name": "CartTitanUnlock",
+      "type": "achievement",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cart_titan_unlock",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/my_titan/advancements/cart_titan_unlock.json"
+        ]
+      },
+      "path": "~/Advancements "
+    },
+    {
+      "name": "JawTitanUnlock",
+      "type": "achievement",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jaw_titan_unlock",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/my_titan/advancements/jaw_titan_unlock.json"
+        ]
+      },
+      "path": "~/Advancements "
+    },
+    {
+      "name": "FoundingTitanUnlock",
+      "type": "achievement",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "founding_titan_unlock",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/my_titan/advancements/founding_titan_unlock.json"
+        ]
+      },
+      "path": "~/Advancements "
+    },
+    {
+      "name": "AllTitansUnlocked",
+      "type": "achievement",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "all_titans_unlocked",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/my_titan/advancements/all_titans_unlocked.json"
+        ]
+      },
+      "path": "~/Advancements "
+    },
+    {
+      "name": "AllTitansChecker",
+      "type": "procedure",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "all_titans_checker",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/AllTitansCheckerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Advancements "
+    },
+    {
+      "name": "SelectionMenuOpenOnKeyPressed",
+      "type": "procedure",
+      "sortid": 60,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "selection_menu_open_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/SelectionMenuOpenOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "SelectionMenuOpen",
+      "type": "keybind",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "selection_menu_open",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/network/SelectionMenuOpenMessage.java"
+        ]
+      },
+      "path": "~/Keybinds"
     }
   ],
   "variable_elements": [
@@ -429,6 +1363,12 @@
       "type": "number",
       "scope": "player_lifetime",
       "value": "0"
+    },
+    {
+      "name": "DoesPlayerOwnWarHammerTitan",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
     }
   ],
   "sound_elements": [
@@ -447,24 +1387,77 @@
       ],
       "category": "player",
       "subtitle": ""
+    },
+    {
+      "name": "heartbeat",
+      "files": [
+        "heartbeat"
+      ],
+      "category": "master",
+      "subtitle": ""
     }
   ],
   "tag_elements": {},
   "language_map": {
     "en_us": {
+      "item.my_titan.war_hammer_titan_syringe": "Warhammer Titan Syringe",
       "key.my_titan.move_odm_left": "Navigate Left ODM Gear",
-      "item.my_titan.odm_gear_helmet": "ODM Gear Helmet",
+      "advancements.all_titans_unlocked.descr": "Unlock all nine Titans!",
+      "advancements.armored_titan_unlock.descr": "Unlock the Armored Titan",
+      "advancements.beast_titan_unlock.title": "All Your Precious Sacrifices",
+      "gui.my_titan.titan_selection.button_war_hammer_titan": "War Hammer Titan",
+      "item.my_titan.odm_gear_boots": "ODM Gear Boots",
+      "advancements.female_titan_unlock.title": "\"What must be done... Must be done.\"",
+      "advancements.all_titans_unlocked.title": "The Nine Titans",
+      "item.my_titan.attack_titan_syringe": "Attack Titan Syringe",
+      "item.my_titan.female_titan_syringe": "Female Titan Syringe",
+      "item.my_titan.cart_titan_syringe": "Cart Titan Syringe",
+      "item.my_titan.odm_chestplate": "ODM Chestplate",
+      "gui.my_titan.titan_selection.button_colossal_titan": "Colossal Titan",
+      "advancements.jaw_titan_unlock.title": "Bad Breath...",
+      "advancements.jaw_titan_unlock.descr": "Unlock the Jaw Titan",
+      "item.my_titan.armored_titan_syringe": "Armored Titan Syringe",
       "item.my_titan.my_titan": "My Titan",
       "item.my_titan.odm_gear_chestplate": "ODM Gear Chestplate",
-      "subtitles.titanstransform": "",
-      "item.my_titan.odm_gear_leggings": "ODM Gear",
+      "advancements.attack_titan_unlock.title": "No Other Choices",
+      "advancements.founding_titan_unlock.title": "If I lose it all",
       "item_group.my_titan.my_titan_tab": "My Titan",
+      "item.my_titan.odm_helmet": "ODM Helmet",
+      "advancements.female_titan_unlock.descr": "Unlock the Female Titan",
+      "item.my_titan.beast_titan_syringe": "Beast Titan Syringe",
       "subtitles.titanelectricity": "",
-      "item.my_titan.odm_gear_boots": "ODM Gear Boots",
+      "advancements.war_hammer_titan.title": "A Fulfilled Duty",
+      "subtitles.heartbeat": "",
+      "advancements.colossal_titan_unlock.descr": "Unlock the Colossal Titan",
+      "advancements.cart_titan_unlock.title": "Ohayo",
+      "key.categories.titan": "My Titan",
+      "gui.my_titan.titan_selection.button_jaw_titan": "Jaw Titan",
+      "item.my_titan.odm_gear_helmet": "ODM Gear Helmet",
+      "subtitles.titanstransform": "",
+      "item.my_titan.colossal_titan_syringe": "Colossal Titan Syringe",
+      "item.my_titan.jaw_titan_syringe": "Jaw Titan Syringe",
+      "gui.my_titan.titan_selection.button_attack_titan": "Attack Titan",
+      "advancements.founding_titan_unlock.descr": "Unlock the Founding Titan",
+      "advancements.attack_titan_unlock.descr": "Unlock the Attack Titan",
+      "gui.my_titan.titan_selection.button_armored_titan": "Armored Titan",
+      "item.my_titan.founding_titan_syringe": "Founding Titan Syringe",
+      "key.my_titan.move_odm_right": "Navigate Left ODM Gear",
+      "gui.my_titan.titan_selection.button_cart_titan": "Cart Titan",
+      "gui.my_titan.titan_selection.button_female_titan": "Female Titan",
+      "item.my_titan.empty_syringe": "Empty Syringe",
+      "advancements.war_hammer_titan.descr": "Unlock the Warhammer Titan",
+      "item.my_titan.odm_gear_leggings": "ODM Gear",
+      "key.my_titan.selection_menu_open": "Open Titan Selection Menu",
+      "advancements.colossal_titan_unlock.title": "The sort of sights he saw",
+      "gui.my_titan.titan_selection.button_founding_titan": "Founding Titan",
       "key.my_titan.titan_transformation": "Transform",
       "key.my_titan.use_odm_gear": "Use ODM Gear",
-      "key.my_titan.move_odm_right": "Navigate Left ODM Gear",
-      "key.categories.titan": "My Titan"
+      "gui.my_titan.titan_selection.button_beast_titan": "Beast Titan",
+      "advancements.cart_titan_unlock.descr": "Unlock the Cart Titan",
+      "advancements.armored_titan_unlock.title": "Once and for All",
+      "item.my_titan.odm_leggings": "ODM Gear",
+      "advancements.beast_titan_unlock.descr": "Unlock the Beast Titan",
+      "item.my_titan.odm_boots": "ODM Boots"
     }
   },
   "foldersRoot": {
@@ -487,7 +1480,16 @@
         "children": [
           {
             "name": "Transformation",
-            "children": []
+            "children": [
+              {
+                "name": "Titan Selection Variables",
+                "children": []
+              },
+              {
+                "name": "Syringes",
+                "children": []
+              }
+            ]
           },
           {
             "name": "ODM Gear Movement",
@@ -502,6 +1504,23 @@
       {
         "name": "Keybinds",
         "children": []
+      },
+      {
+        "name": "Items",
+        "children": [
+          {
+            "name": "Syringes",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "GUIs",
+        "children": []
+      },
+      {
+        "name": "Advancements ",
+        "children": []
       }
     ]
   },
@@ -509,7 +1528,7 @@
     "modid": "my_titan",
     "modName": "My Titan",
     "version": "1.0.0",
-    "author": "ARCADIA, MCreator",
+    "author": "KillsBoostMyEgo, RetiredTN",
     "websiteURL": "https://mcreator.net",
     "license": "Not specified",
     "serverSideOnly": false,
@@ -517,7 +1536,6 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [
-      "curios_api",
       "geckolib",
       "playeranimator",
       "jei"

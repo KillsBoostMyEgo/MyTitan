@@ -1,0 +1,30 @@
+{
+  "display": {
+    "background": "minecraft:textures/block/stone.png",
+    "icon": {
+      "item": "my_titan:founding_titan_syringe"
+    },
+    "title": {
+      "translate": "advancements.founding_titan_unlock.title"
+    },
+    "description": {
+      "translate": "advancements.founding_titan_unlock.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "founding_titan_unlock_0": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "my_titan:founding_titan_syringe"
+          ]
+        }
+      }
+    }
+  }
+}

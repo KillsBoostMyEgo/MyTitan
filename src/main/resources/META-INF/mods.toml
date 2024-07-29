@@ -8,7 +8,7 @@ version="1.0.0"
 displayName="My Titan"
 displayURL="https://mcreator.net"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
-authors="ARCADIA, MCreator"
+authors="KillsBoostMyEgo, RetiredTN"
 
 # Start of user code block mod configuration
 # End of user code block mod configuration
@@ -28,12 +28,6 @@ authors="ARCADIA, MCreator"
     side="BOTH"
 
 
-[[dependencies.my_titan]]
-    modId="curios_api"
-    type="optional"
-    versionRange="[0,)"
-    ordering="NONE"
-    side="BOTH"
 [[dependencies.my_titan]]
     modId="geckolib"
     type="optional"

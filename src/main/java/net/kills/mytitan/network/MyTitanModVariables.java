@@ -68,6 +68,7 @@ public class MyTitanModVariables {
 			clone.DoesPlayerOwnCartTitan = original.DoesPlayerOwnCartTitan;
 			clone.DoesPlayerOwnJawTitan = original.DoesPlayerOwnJawTitan;
 			clone.DoesPlayerOwnArmoredTitan = original.DoesPlayerOwnArmoredTitan;
+			clone.DoesPlayerOwnWarHammerTitan = original.DoesPlayerOwnWarHammerTitan;
 			if (!event.isWasDeath()) {
 				clone.SelectedTitan = original.SelectedTitan;
 				clone.ODMEnabled = original.ODMEnabled;
@@ -96,6 +97,7 @@ public class MyTitanModVariables {
 		public double ODMSelectedY = 0;
 		public double ODMSelectedX = 0;
 		public double ODMDirection = 0;
+		public boolean DoesPlayerOwnWarHammerTitan = false;
 
 		@Override
 		public CompoundTag serializeNBT() {
@@ -115,6 +117,7 @@ public class MyTitanModVariables {
 			nbt.putDouble("ODMSelectedY", ODMSelectedY);
 			nbt.putDouble("ODMSelectedX", ODMSelectedX);
 			nbt.putDouble("ODMDirection", ODMDirection);
+			nbt.putBoolean("DoesPlayerOwnWarHammerTitan", DoesPlayerOwnWarHammerTitan);
 			return nbt;
 		}
 
@@ -135,6 +138,7 @@ public class MyTitanModVariables {
 			ODMSelectedY = nbt.getDouble("ODMSelectedY");
 			ODMSelectedX = nbt.getDouble("ODMSelectedX");
 			ODMDirection = nbt.getDouble("ODMDirection");
+			DoesPlayerOwnWarHammerTitan = nbt.getBoolean("DoesPlayerOwnWarHammerTitan");
 		}
 
 		public void syncPlayerVariables(Entity entity) {

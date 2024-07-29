@@ -4,7 +4,7 @@
   "definition": {
     "triggerKey": "D",
     "keyBindingName": "Navigate Left ODM Gear",
-    "keyBindingCategoryKey": "movement",
+    "keyBindingCategoryKey": "titan",
     "onKeyPressed": {
       "name": "ODMMoveRightEnable"
     },

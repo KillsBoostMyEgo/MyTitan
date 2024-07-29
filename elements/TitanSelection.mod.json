@@ -1,0 +1,157 @@
+{
+  "_fv": 60,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 200,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "name": "button_attack_titan",
+          "text": "Attack Titan",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SelectedAttackTitan"
+          },
+          "width": 87,
+          "height": 20,
+          "x": 167,
+          "y": 35
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_colossal_titan",
+          "text": "Colossal Titan",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SelectedColossalTitan"
+          },
+          "width": 98,
+          "height": 20,
+          "x": 162,
+          "y": 55
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_armored_titan",
+          "text": "Armored Titan",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SelectedJawTitan"
+          },
+          "width": 93,
+          "height": 20,
+          "x": 170,
+          "y": 172
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_female_titan",
+          "text": "Female Titan",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SelectedFemaleTitan"
+          },
+          "width": 87,
+          "height": 20,
+          "x": 167,
+          "y": 76
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_cart_titan",
+          "text": "Cart Titan",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SelectedCartTitan"
+          },
+          "width": 77,
+          "height": 20,
+          "x": 173,
+          "y": 133
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_beast_titan",
+          "text": "Beast Titan",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SelectedBeastTitan"
+          },
+          "width": 82,
+          "height": 20,
+          "x": 167,
+          "y": 95
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_jaw_titan",
+          "text": "Jaw Titan",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SelectedJawTitan"
+          },
+          "width": 72,
+          "height": 20,
+          "x": 176,
+          "y": 154
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_war_hammer_titan",
+          "text": "War Hammer Titan",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SelectedArmoredTitan"
+          },
+          "width": 108,
+          "height": 20,
+          "x": 162,
+          "y": 189
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_founding_titan",
+          "text": "Founding Titan",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SelectedFoundingTitan"
+          },
+          "width": 98,
+          "height": 20,
+          "x": 165,
+          "y": 112
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

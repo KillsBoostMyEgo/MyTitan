@@ -14,5 +14,13 @@
         "stream": false
       }
     ]
+  },
+  "heartbeat": {
+    "sounds": [
+      {
+        "name": "my_titan:heartbeat",
+        "stream": false
+      }
+    ]
   }
 }

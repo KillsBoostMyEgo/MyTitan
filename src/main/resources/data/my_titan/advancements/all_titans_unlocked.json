@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "my_titan:my_titan"
+    },
+    "title": {
+      "translate": "advancements.all_titans_unlocked.title"
+    },
+    "description": {
+      "translate": "advancements.all_titans_unlocked.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "all_titans_unlocked_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "my_titan:colossal_titan_unlock"
+}
