@@ -15,6 +15,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 
 import net.kills.mytitan.procedures.TransformTitanProcedure;
+import net.kills.mytitan.procedures.TitanTransformationCompleteProcedure;
 import net.kills.mytitan.MyTitanMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -57,7 +58,11 @@ public record TitanTransformationMessage(int type, int pressedms) implements Cus
 			return;
 		if (type == 0) {
 
-			TransformTitanProcedure.execute(world, entity);
+			TransformTitanProcedure.execute(world, x, y, z, entity);
+		}
+		if (type == 1) {
+
+			TitanTransformationCompleteProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

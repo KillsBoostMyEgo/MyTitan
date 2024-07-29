@@ -1,20 +1,16 @@
 {
-  "titanstransform": {
-    "sounds": [
-      {
-        "name": "my_titan:titan_transformation_lightning_sound_effects_-_attack_on_titan_1",
-        "stream": false
-      },
-      {
-        "name": "my_titan:titan_transformation_lightning_sound_effects_-_attack_on_titan_1",
-        "stream": false
-      }
-    ]
-  },
   "titanelectricity": {
     "sounds": [
       {
         "name": "my_titan:electricity_sound_effect_xd_thx_for_1m_views",
+        "stream": false
+      }
+    ]
+  },
+  "titantransform": {
+    "sounds": [
+      {
+        "name": "my_titan:titan_transformation_lightning_sound_effects_-_attack_on_titan_1",
         "stream": false
       }
     ]

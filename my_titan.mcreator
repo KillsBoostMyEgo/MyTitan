@@ -120,96 +120,7 @@
         "files": [
           "src/main/java/net/kills/mytitan/procedures/ODMEnableProcedure.java"
         ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Procedures/ODM Gear Movement"
-    },
-    {
-      "name": "ODMDisable",
-      "type": "procedure",
-      "sortid": 10,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "odm_disable",
-      "metadata": {
-        "files": [
-          "src/main/java/net/kills/mytitan/procedures/ODMDisableProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Procedures/ODM Gear Movement"
-    },
-    {
-      "name": "ODMLogic",
-      "type": "procedure",
-      "sortid": 11,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "odm_logic",
-      "metadata": {
-        "files": [
-          "src/main/java/net/kills/mytitan/procedures/ODMLogicProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Procedures/ODM Gear Movement"
-    },
-    {
-      "name": "ODMMoveLeftEnable",
-      "type": "procedure",
-      "sortid": 12,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "odm_move_left_enable",
-      "metadata": {
-        "files": [
-          "src/main/java/net/kills/mytitan/procedures/ODMMoveLeftEnableProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Procedures/ODM Gear Movement"
-    },
-    {
-      "name": "ODMMoveRightEnable",
-      "type": "procedure",
-      "sortid": 14,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "odm_move_right_enable",
-      "metadata": {
-        "files": [
-          "src/main/java/net/kills/mytitan/procedures/ODMMoveRightEnableProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/Procedures/ODM Gear Movement"
     },
@@ -252,14 +163,180 @@
         "files": [
           "src/main/java/net/kills/mytitan/procedures/ODMMoveDisableProcedure.java"
         ],
+        "dependencies": []
+      },
+      "path": "~/Procedures/ODM Gear Movement"
+    },
+    {
+      "name": "ODMDisable",
+      "type": "procedure",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "odm_disable",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/ODMDisableProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Procedures/ODM Gear Movement"
+    },
+    {
+      "name": "ODMLogic",
+      "type": "procedure",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "odm_logic",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/ODMLogicProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
       "path": "~/Procedures/ODM Gear Movement"
+    },
+    {
+      "name": "ODMMoveLeftEnable",
+      "type": "procedure",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "odm_move_left_enable",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/ODMMoveLeftEnableProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Procedures/ODM Gear Movement"
+    },
+    {
+      "name": "ODMMoveRightEnable",
+      "type": "procedure",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "odm_move_right_enable",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/ODMMoveRightEnableProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Procedures/ODM Gear Movement"
+    },
+    {
+      "name": "Electricity",
+      "type": "particle",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "electricity",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/my_titan/particles/electricity.json",
+          "src/main/java/net/kills/mytitan/client/particle/ElectricityParticle.java"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "TitanTransformationComplete",
+      "type": "procedure",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "titan_transformation_complete",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/TitanTransformationCompleteProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Keybinds"
+    },
+    {
+      "name": "TitanTransformParticlesSoun",
+      "type": "procedure",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "titan_transform_particles_soun",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/procedures/TitanTransformParticlesSounProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures/Transformation"
+    },
+    {
+      "name": "Blood",
+      "type": "particle",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blood",
+      "metadata": {
+        "files": [
+          "src/main/java/net/kills/mytitan/client/particle/BloodParticle.java",
+          "src/main/resources/assets/my_titan/particles/blood.json"
+        ]
+      },
+      "path": "~/Particles"
     }
   ],
   "variable_elements": [
@@ -330,7 +407,7 @@
       "value": "false"
     },
     {
-      "name": "ODMSelectedX",
+      "name": "ODMSelectedZ",
       "type": "number",
       "scope": "player_lifetime",
       "value": "0"
@@ -342,7 +419,7 @@
       "value": "0"
     },
     {
-      "name": "ODMSelectedZ",
+      "name": "ODMSelectedX",
       "type": "number",
       "scope": "player_lifetime",
       "value": "0"
@@ -356,18 +433,17 @@
   ],
   "sound_elements": [
     {
-      "name": "titanstransform",
+      "name": "titanelectricity",
       "files": [
-        "titan_transformation_lightning_sound_effects_-_attack_on_titan_1",
-        "titan_transformation_lightning_sound_effects_-_attack_on_titan_1"
+        "electricity_sound_effect_xd_thx_for_1m_views"
       ],
       "category": "player",
       "subtitle": ""
     },
     {
-      "name": "titanelectricity",
+      "name": "titantransform",
       "files": [
-        "electricity_sound_effect_xd_thx_for_1m_views"
+        "titan_transformation_lightning_sound_effects_-_attack_on_titan_1"
       ],
       "category": "player",
       "subtitle": ""
@@ -395,7 +471,7 @@
     "name": "~",
     "children": [
       {
-        "name": "Player Animations",
+        "name": "Biomes",
         "children": []
       },
       {
@@ -403,7 +479,7 @@
         "children": []
       },
       {
-        "name": "Keybinds",
+        "name": "Particles",
         "children": []
       },
       {
@@ -418,6 +494,14 @@
             "children": []
           }
         ]
+      },
+      {
+        "name": "Player Animations",
+        "children": []
+      },
+      {
+        "name": "Keybinds",
+        "children": []
       }
     ]
   },
